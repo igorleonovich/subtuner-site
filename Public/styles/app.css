@@ -1,0 +1,60 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "Roboto";
+	margin: 0;
+	color: white;
+	background: black;
+}
+
+.main-container {
+	grid-area: main-container;
+}
+
+.left-container {
+	grid-area: left-container;
+	border-right: 1px solid white;
+}
+
+.right-container {
+	grid-area: right-container;
+}
+
+.console-container {
+	grid-area: console-container;
+	border-top: 1px solid white;
+}
+
+.root-container {
+	display: grid;
+	height: 100%;
+	grid-template-areas:
+		'main-container'
+		'main-container'
+		'main-container'
+		'console-container';
+}
+
+.main-container {
+	display: grid;
+	height: 100%;
+	grid-template-areas:
+		'left-container right-container';
+}
+
+.profile-circle {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}

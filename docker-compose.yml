@@ -3,7 +3,7 @@
 # Install Docker on your system to run and test
 # your Vapor app in a production-like environment.
 #
-# Note: This file is intended for testing and does not 
+# Note: This file is intended for testing and does not
 # implement best practices for a production deployment.
 #
 # Learn more: https://docs.docker.com/compose/reference/
@@ -14,60 +14,55 @@
 # Run migrations: docker-compose up migrate
 #       Stop all: docker-compose down (add -v to wipe db)
 #
-version: '3.7'
-
-volumes:
-  db_data:
+version: "3.7"
 
 x-shared_environment: &shared_environment
+  DATABASE_HOST: psql
+  DATABASE_NAME: cluster
+  DATABASE_USERNAME: postgres
+  DATABASE_PASSWORD: password
   LOG_LEVEL: ${LOG_LEVEL:-debug}
-  DATABASE_HOST: db
-  DATABASE_NAME: vapor_database
-  DATABASE_USERNAME: vapor_username
-  DATABASE_PASSWORD: vapor_password
 
 services:
-  app:
+  site:
     image: site:latest
+    container_name: site
     build:
-      context: .
+      context: ./projects/external/site
     environment:
       <<: *shared_environment
     depends_on:
-      - db
+      - psql
+    networks:
+      - external
     ports:
       - '8080:80'
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "80"]
-  migrate:
+  site-migrate:
     image: site:latest
+    container_name: site-migrate
     build:
-      context: .
+      context: ./projects/external/site
     environment:
       <<: *shared_environment
     depends_on:
-      - db
+      - psql
+    networks:
+      - external
     command: ["migrate", "--yes"]
     deploy:
       replicas: 0
-  revert:
+  site-revert:
     image: site:latest
+    container_name: site-revert
     build:
-      context: .
+      context: ./projects/external/site
     environment:
       <<: *shared_environment
     depends_on:
-      - db
+      - psql
+    networks:
+      - external
     command: ["migrate", "--revert", "--yes"]
     deploy:
       replicas: 0
-  db:
-    image: postgres:12.1-alpine
-    volumes:
-      - db_data:/var/lib/postgresql/data/pgdata
-    environment:
-      PGDATA: /var/lib/postgresql/data/pgdata
-      POSTGRES_USER: vapor_username
-      POSTGRES_PASSWORD: vapor_password
-      POSTGRES_DB: vapor_database
-    ports:
-      - '5432:5432'
