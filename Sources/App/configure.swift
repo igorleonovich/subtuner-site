@@ -7,10 +7,23 @@ import NIOSSL
 // configures your application
 public func configure(_ app: Application) throws {
     
-    // MARK: - Middleware
+    // MARK: - Default Middleware
     
-    // Serves files from `Public/` directory
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+    app.middleware.use(CORSMiddleware(configuration: .default()))
+    
+    // Custom error handler
+    app.middleware.use(ErrorMiddleware { req, error -> Response in
+        var body = ""
+        if let error = error as? Vapor.Abort {
+            body = "<h3>\(error.identifier) \(error.reason)</h3>"
+        }
+        return .init(status: .internalServerError, version: req.version, headers: ["Content-Type": "text/html; charset=utf-8"], body: .init(string: body))
+    })
+
+    
+    // MARK: - Custom Middleware
+    
     app.middleware.use(ExtendPathMiddleware())
     
     
