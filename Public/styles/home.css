@@ -1,3 +1,5 @@
+/* General */
+
 body {
   margin: 0;
   padding: 0;
@@ -5,11 +7,15 @@ body {
   font-weight: 100;
 }
 
+/* Root */
+
 #main-container {
     width: 320px;
 		margin: 0 auto;
 		padding: 0px;
 }
+
+/* Navigation */
 
 #navigation {
   z-index: 9999;
@@ -18,9 +24,11 @@ body {
   margin: 0;
   width: inherit;
   height: 48px;
-  background: black;
+  background: #000000;
   position: fixed;
 }
+
+/* Menu */
 
 #menu-button {
   position: absolute;
@@ -42,6 +50,23 @@ body {
 #menu-button a:hover {
   fill: white;
 }
+
+#menu-popup {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 48px;
+  width: inherit;
+  height: 100%;
+  background: #000000;
+}
+
+#menu-popup ul li {
+  list-style-type: none;
+  height: 30px;
+}
+
+/* Logo */
 
 #logo {
   position: absolute;
@@ -76,7 +101,7 @@ body {
   top: 48px;
   width: inherit;
   height: 80px;
-  background: #ddd;
+  background: #dddddd;
 }
 
 #account-popup ul li {
