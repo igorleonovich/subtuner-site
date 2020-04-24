@@ -1,0 +1,12 @@
+#extend("base-dashboard"):
+    #export("title", "Dashboard")
+    #export("body"):
+        <div class="root-container">
+            <div class="main-container">
+              <div class="left-container"></div>
+              <div class="right-container"></div>
+            </div>
+            <div class="console-container"></div>
+        </div>
+    #endexport
+#endextend

@@ -1,3 +1,9 @@
+:root {
+	--background-color: black;
+	--foreground-color: white;
+	--border: 1px solid var(--foreground-color);
+}
+
 html, body {
 	height: 100%;
 }
@@ -5,8 +11,8 @@ html, body {
 body {
 	font-family: "Roboto";
 	margin: 0;
-	color: white;
-	background: black;
+	color: var(--foreground-color);
+	background: var(--background-color);
 }
 
 .main-container {
@@ -15,7 +21,7 @@ body {
 
 .left-container {
 	grid-area: left-container;
-	border-right: 1px solid white;
+	border-right: var(--border);
 }
 
 .right-container {
@@ -24,7 +30,7 @@ body {
 
 .console-container {
 	grid-area: console-container;
-	border-top: 1px solid white;
+	border-top: var(--border);
 }
 
 .root-container {
@@ -53,8 +59,13 @@ body {
 }
 
 @media screen and (prefers-color-scheme: light) {
+	:root {
+		--background-color: white;
+		--foreground-color: black;
+	}
+
   body {
-    background-color: white;
-    color: black;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
   }
 }
