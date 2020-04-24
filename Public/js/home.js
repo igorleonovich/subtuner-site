@@ -3,6 +3,7 @@ function clickMenu() {
   var opened = menuPopup.dataset.opened;
   var menuButtonLink = document.querySelector('#menu-button').firstElementChild;
   var accountMenuButton = document.getElementById("account-button");
+  var accountPopup = document.querySelector('#account-popup');
   if (opened == "true") {
     menuPopup.style.display = "none";
     menuButtonLink.style.backgroundImage = "url(../images/hamburger.svg)";
@@ -20,6 +21,7 @@ function clickMenu() {
     menuButtonLink.style.height = "26px";
     menuPopup.dataset.opened = "true";
     accountMenuButton.style.display = "none";
+    accountPopup.style.display = "none";
     disableScroll();
   }
 }
