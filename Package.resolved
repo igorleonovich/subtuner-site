@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "6e1fd8560bdc401ba81438090997fd15abbc904b",
-          "version": "1.0.0-rc.1.20"
+          "revision": "c92320b7f2d3b6f291db4c11c5ede27d69da555b",
+          "version": "1.0.0-rc.1.23"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/postgres-kit.git",
         "state": {
           "branch": null,
-          "revision": "8f6d4fa648c5aa1d6ecdefea4d7fe25f97e599d0",
-          "version": "2.0.0-rc.1.1"
+          "revision": "b465e9e36802e8525571fc6757ceef6acfd47f6c",
+          "version": "2.0.0-rc.1.2"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/vapor/postgres-nio.git",
         "state": {
           "branch": null,
-          "revision": "a528171a580b56fc38fd505bdb7d5de73e68a69a",
-          "version": "1.0.0-rc.2"
+          "revision": "93e984384ea6b9689671e5e1716fb12cec347171",
+          "version": "1.0.1"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/vapor/sql-kit.git",
         "state": {
           "branch": null,
-          "revision": "f777df2a355b41b382ddf912e21b07ca30b3d247",
-          "version": "3.0.0-rc.2"
+          "revision": "1e0239616134dd45fa4894bfe83750d196e3a83d",
+          "version": "3.0.0"
         }
       },
       {
@@ -186,8 +186,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "9b4ebf7fb16766d27d6ca49cfa1cdfe2dc20032f",
-          "version": "4.3.1"
+          "revision": "7f6c8277b8cbe4381d00ddcef3b898c820780324",
+          "version": "4.4.0"
         }
       },
       {
