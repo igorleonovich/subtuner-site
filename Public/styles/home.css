@@ -37,7 +37,6 @@ body {
   background-position: center center;
   width: 64px;
   height: 64px;
-  filter: invert(100%);
 }
 
 #menu-button a:hover {
