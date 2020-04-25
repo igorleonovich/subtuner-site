@@ -4,7 +4,6 @@ import Vapor
 import Leaf
 import NIOSSL
 
-// configures your application
 public func configure(_ app: Application) throws {
     
     // MARK: - Default Middleware
@@ -58,6 +57,9 @@ public func configure(_ app: Application) throws {
     app.views.use(.leaf)
     app.leaf.cache.isEnabled = app.environment.isRelease
 
+    
+    // MARK: - Database
+    
     app.databases.use(.postgres(
         hostname: Environment.get("DATABASE_HOST") ?? "localhost",
         username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",

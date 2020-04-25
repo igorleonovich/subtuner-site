@@ -1,10 +1,3 @@
-//
-//  ExtendPathMiddleware.swift
-//  
-//
-//  Created by Untitled on 4/24/20.
-//
-
 import Vapor
 
 final class ExtendPathMiddleware: Middleware {

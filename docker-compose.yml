@@ -17,10 +17,6 @@
 version: "3.7"
 
 x-shared_environment: &shared_environment
-  DATABASE_HOST: psql
-  DATABASE_NAME: subtuner
-  DATABASE_USERNAME: subtuner
-  DATABASE_PASSWORD: S5ttG2vZNEzwhH
   LOG_LEVEL: ${LOG_LEVEL:-debug}
 
 services:
@@ -29,6 +25,8 @@ services:
     container_name: site
     build:
       context: ./projects/external/site
+    env_file:
+      - ./.env
     environment:
       <<: *shared_environment
     depends_on:
@@ -43,6 +41,8 @@ services:
     container_name: site-migrate
     build:
       context: ./projects/external/site
+    env_file:
+      - ./.env
     environment:
       <<: *shared_environment
     depends_on:
@@ -57,6 +57,8 @@ services:
     container_name: site-revert
     build:
       context: ./projects/external/site
+    env_file:
+      - ./.env
     environment:
       <<: *shared_environment
     depends_on:
