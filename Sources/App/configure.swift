@@ -68,6 +68,7 @@ public func configure(_ app: Application) throws {
     ), as: .psql)
 
     app.migrations.add(CreateTodo())
+    app.migrations.add(CreateGalaxy())
 
     // register routes
     try routes(app)

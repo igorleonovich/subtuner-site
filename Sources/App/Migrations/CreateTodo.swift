@@ -12,6 +12,7 @@ struct CreateTodo: Migration {
             .id()
             .field(.title, .string, .required)
             .field(.status, .string, .required)
+            .field(.labels, .int, .required)
             .create()
         }
     }
