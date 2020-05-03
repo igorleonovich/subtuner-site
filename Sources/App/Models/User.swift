@@ -26,6 +26,24 @@ final class User: Model, Content {
 }
 
 extension User {
+    struct Migration: Fluent.Migration {
+        var name: String { "CreateUser" }
+
+        func prepare(on database: Database) -> EventLoopFuture<Void> {
+            database.schema("users")
+                .id()
+                .field("email", .string, .required)
+                .field("password_hash", .string, .required)
+                .create()
+        }
+
+        func revert(on database: Database) -> EventLoopFuture<Void> {
+            database.schema("users").delete()
+        }
+    }
+}
+
+extension User {
     struct Create: Content {
         var email: String
         var password: String
@@ -40,4 +58,20 @@ extension User.Create: Validatable {
     }
 }
 
-//extension UserModel: Authenticatable {}
+extension User: ModelAuthenticatable {
+    static let usernameKey = \User.$email
+    static let passwordHashKey = \User.$passwordHash
+
+    func verify(password: String) throws -> Bool {
+        try Bcrypt.verify(password, created: self.passwordHash)
+    }
+}
+
+extension User {
+    func generateToken() throws -> UserToken {
+        try .init(
+            value: [UInt8].random(count: 16).base64,
+            userID: self.requireID()
+        )
+    }
+}

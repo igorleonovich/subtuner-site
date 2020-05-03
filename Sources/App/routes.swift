@@ -25,6 +25,14 @@ func routes(_ app: Application) throws {
             .map { user }
     }
     
+    let passwordProtected = app.grouped(User.authenticator())
+    passwordProtected.post("login") { req -> EventLoopFuture<UserToken> in
+        let user = try req.auth.require(User.self)
+        let token = try user.generateToken()
+        return token.save(on: req.db)
+            .map { token }
+    }
+    
     app.get("hello") { req -> EventLoopFuture<String> in
         /// Create a new void promise
         let promise = req.eventLoop.makePromise(of: Void.self)

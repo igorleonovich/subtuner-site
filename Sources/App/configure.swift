@@ -67,10 +67,10 @@ public func configure(_ app: Application) throws {
         database: Environment.get("DATABASE_NAME") ?? "vapor_database"
     ), as: .psql)
 
+    app.migrations.add(User.Migration())
+    app.migrations.add(UserToken.Migration())
     app.migrations.add(CreateTodo())
     app.migrations.add(CreateGalaxy())
-    app.migrations.add(CreateUser())
-//    app.migrations.add(CreateUserTokenModel())
 
     // register routes
     try routes(app)
