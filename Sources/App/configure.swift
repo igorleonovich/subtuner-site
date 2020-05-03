@@ -69,6 +69,8 @@ public func configure(_ app: Application) throws {
 
     app.migrations.add(CreateTodo())
     app.migrations.add(CreateGalaxy())
+    app.migrations.add(CreateUser())
+//    app.migrations.add(CreateUserTokenModel())
 
     // register routes
     try routes(app)

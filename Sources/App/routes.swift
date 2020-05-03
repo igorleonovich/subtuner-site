@@ -3,6 +3,28 @@ import Vapor
 
 func routes(_ app: Application) throws {
     
+//    let protected = app.grouped(
+////        UserModelBasicAuthenticator(),
+//        UserModel.authenticator(),
+//        UserModel.guardMiddleware())
+//    protected.get("me") { req -> String in
+//        try req.auth.require(UserModel.self).email
+//    }
+    
+    app.post("users") { req -> EventLoopFuture<User> in
+        try User.Create.validate(req)
+        let create = try req.content.decode(User.Create.self)
+        guard create.password == create.confirmPassword else {
+            throw Abort(.badRequest, reason: "Passwords did not match")
+        }
+        let user = try User(
+            email: create.email,
+            passwordHash: Bcrypt.hash(create.password)
+        )
+        return user.save(on: req.db)
+            .map { user }
+    }
+    
     app.get("hello") { req -> EventLoopFuture<String> in
         /// Create a new void promise
         let promise = req.eventLoop.makePromise(of: Void.self)
