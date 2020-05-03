@@ -13,9 +13,9 @@ public func configure(_ app: Application) throws {
     
     // Custom error handler
     app.middleware.use(ErrorMiddleware { req, error -> Response in
-        var body = ""
-        if let error = error as? Vapor.Abort {
-            body = "<h3>\(error.identifier) \(error.reason)</h3>"
+        var body = "Unknown error"
+        if let error = error as? Vapor.AbortError {
+            body = "\(error.status)\n\(error.localizedDescription)\n\(error.reason)"
         }
         return .init(status: .internalServerError, version: req.version, headers: ["Content-Type": "text/html; charset=utf-8"], body: .init(string: body))
     })
