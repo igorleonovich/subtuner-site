@@ -1,11 +1,11 @@
 import Vapor
 import Fluent
 
+// MARK: Object
+
 final class User: Model, Content {
         
     static let schema = "users"
-    
-    // MARK: - Fields
     
     @ID(key: .id)
     var id: UUID?
@@ -25,6 +25,8 @@ final class User: Model, Content {
     }
 }
 
+// MARK: Migration
+
 extension User {
     struct Migration: Fluent.Migration {
         var name: String { "CreateUser" }
@@ -43,6 +45,8 @@ extension User {
     }
 }
 
+// MARK: Creation
+
 extension User {
     struct Create: Content {
         var email: String
@@ -51,12 +55,16 @@ extension User {
     }
 }
 
+// MARK: Validation
+
 extension User.Create: Validatable {
     static func validations(_ validations: inout Validations) {
         validations.add("email", as: String.self, is: .email)
         validations.add("password", as: String.self, is: .count(8...))
     }
 }
+
+// MARK: Basic
 
 extension User: ModelAuthenticatable {
     static let usernameKey = \User.$email
@@ -67,6 +75,8 @@ extension User: ModelAuthenticatable {
     }
 }
 
+// MARK: JWT
+
 extension User {
     func generateToken() throws -> UserToken {
         try .init(
@@ -75,3 +85,7 @@ extension User {
         )
     }
 }
+
+// MARK: - Session
+
+extension User: ModelSessionAuthenticatable {}

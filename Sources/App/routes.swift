@@ -25,12 +25,26 @@ func routes(_ app: Application) throws {
             .map { user }
     }
     
-    let passwordProtected = app.grouped(User.authenticator())
+    let passwordProtected = app.grouped(
+        User.authenticator(),
+        User.guardMiddleware()
+    )
     passwordProtected.post("login") { req -> EventLoopFuture<UserToken> in
         let user = try req.auth.require(User.self)
         let token = try user.generateToken()
         return token.save(on: req.db)
             .map { token }
+    }
+    
+    let tokenProtected = app.grouped(
+        app.sessions.middleware,
+        User.sessionAuthenticator(),
+        UserToken.authenticator(),
+        User.guardMiddleware()
+    )
+    
+    tokenProtected.get("dashboard") { req -> User in
+        try req.auth.require(User.self)
     }
     
     app.get("hello") { req -> EventLoopFuture<String> in

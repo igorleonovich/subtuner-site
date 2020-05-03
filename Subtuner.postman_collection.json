@@ -6,20 +6,54 @@
 	},
 	"item": [
 		{
-			"name": "https://localhost:8080/dashboard",
+			"name": "https://localhost:8080/dashboard JWT",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "hMVVGXpAxEm5W07YOnwIfw==",
+							"value": "W6q/CXNDJPEaw0UAZyzKkA==",
 							"type": "string"
 						}
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "vapor_cookie=e1Gqs5YGUmtTCNH%2Ber%2B7q4IrcaIp8FZZLeufYZSBZkM%3D",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:8080/dashboard",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8080/dashboard COOKIE",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "vapor_cookie=e1Gqs5YGUmtTCNH%2Ber%2B7q4IrcaIp8FZZLeufYZSBZkM%3D",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "https://localhost:8080/dashboard",
 					"protocol": "https",
