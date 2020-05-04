@@ -23,7 +23,7 @@ public func configure(_ app: Application) throws {
     
     // MARK: - Custom Middleware
     
-    app.middleware.use(ExtendPathMiddleware())
+//    app.middleware.use(ExtendPathMiddleware())
     
     
     // MARK: - Security
@@ -66,11 +66,20 @@ public func configure(_ app: Application) throws {
         password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
         database: Environment.get("DATABASE_NAME") ?? "vapor_database"
     ), as: .psql)
+    
+    // MARK: - Migrations
 
     app.migrations.add(User.Migration())
     app.migrations.add(UserToken.Migration())
     app.migrations.add(CreateTodo())
     app.migrations.add(CreateGalaxy())
+    app.migrations.add(SessionRecord.migration)
+    
+    try app.autoMigrate().wait()
+    
+    // MARK: - Sessions
+    
+    app.sessions.use(.memory)
 
     // register routes
     try routes(app)

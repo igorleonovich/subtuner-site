@@ -75,7 +75,7 @@ extension User: ModelAuthenticatable {
     }
 }
 
-// MARK: JWT
+// MARK: Bearer
 
 extension User {
     func generateToken() throws -> UserToken {
@@ -88,4 +88,25 @@ extension User {
 
 // MARK: - Session
 
-extension User: ModelSessionAuthenticatable {}
+//extension User: ModelSessionAuthenticatable {}
+
+extension User: SessionAuthenticatable {
+    typealias SessionID = UUID
+
+    var sessionID: SessionID { self.id! }
+}
+
+struct UserSessionAuthenticator: SessionAuthenticator {
+
+    typealias User = App.User
+    
+    func authenticate(sessionID: User.SessionID, for req: Request) -> EventLoopFuture<Void> {
+        User.find(sessionID, on: req.db).map { user  in
+            if let user = user {
+                req.auth.login(user)
+            } else {
+                print("error")
+            }
+        }
+    }
+}
