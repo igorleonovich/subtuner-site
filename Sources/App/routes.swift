@@ -5,10 +5,10 @@ func routes(_ app: Application) throws {
     
     // MARK: - Unprotected
     
-//    app.get { req in
-//        return req.view.render("home")
-//    }
-//
+    app.get { req in
+        return req.view.render("home")
+    }
+
 //    app.post("users") { req -> EventLoopFuture<User> in
 //        try User.Create.validate(req)
 //        let create = try req.content.decode(User.Create.self)
@@ -25,17 +25,17 @@ func routes(_ app: Application) throws {
     
     // MARK: - Password Protected
     
-    let passwordProtected = app.grouped(
-        User.authenticator(),
-        User.guardMiddleware()
-    )
-
-    passwordProtected.post("login") { req -> EventLoopFuture<UserToken> in
-        let user = try req.auth.require(User.self)
-        let token = try user.generateToken()
-        return token.save(on: req.db)
-            .map { token }
-    }
+//    let passwordProtected = app.grouped(
+//        User.authenticator(),
+//        User.guardMiddleware()
+//    )
+//
+//    passwordProtected.post("login") { req -> EventLoopFuture<UserToken> in
+//        let user = try req.auth.require(User.self)
+//        let token = try user.generateToken()
+//        return token.save(on: req.db)
+//            .map { token }
+//    }
     
     // MARK: - Token Protected
     
