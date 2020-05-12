@@ -6,7 +6,11 @@ func routes(_ app: Application) throws {
     // MARK: - Unprotected
     
     app.get { req in
-        return req.view.render("home")
+        return req.view.render("base-body-home")
+    }
+    
+    app.get("signup") { req in
+        return req.view.render("base-body-sign-up")
     }
 
 //    app.post("users") { req -> EventLoopFuture<User> in
@@ -50,7 +54,7 @@ func routes(_ app: Application) throws {
     
     // MARK: - Session
     
-    let sessions = app.grouped(app.sessions.middleware)
+//    let sessions = app.grouped(app.sessions.middleware)
     
     
 //    let session = app.grouped(

@@ -1,0 +1,123 @@
+/* General */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+}
+
+/* Root */
+
+#main-container {
+    width: 320px;
+		margin: 0 auto;
+		padding: 0px;
+}
+
+/* Navigation */
+
+#navigation {
+  z-index: 9999;
+  display: block;
+  top: 0;
+  margin: 0;
+  width: inherit;
+  height: 48px;
+  background: #000000;
+  position: fixed;
+}
+
+/* Menu */
+
+#menu-button {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+}
+
+#menu-button a {
+  display: block;
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  background-image: url(../images/hamburger.svg);
+  background-position: center center;
+  width: 64px;
+  height: 64px;
+}
+
+#menu-button a:hover {
+  fill: white;
+}
+
+#menu-popup {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 48px;
+  width: inherit;
+  height: 100%;
+  background: #000000;
+}
+
+#menu-popup ul li {
+  list-style-type: none;
+  height: 30px;
+}
+
+/* Logo */
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  color: white;
+}
+
+#logo a {
+  text-decoration: none;
+}
+
+#logo a:visited {
+  color: #ffffff;
+}
+
+#account-button {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(-50%, -50%);
+}
+
+#account-button a {
+  display: block;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-image: url(../images/user.svg);
+  background-position: center center;
+  width: 30px;
+  height: 30px;
+}
+
+#account-popup {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 48px;
+  width: inherit;
+  height: 80px;
+  background: #dddddd;
+}
+
+#account-popup ul li {
+  list-style-type:none;
+  height: 26px;
+}
+
+#content-container {
+  position: relative;
+  top: 48px;
+}
