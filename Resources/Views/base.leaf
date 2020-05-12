@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/styles/base.css">
     #import("styles")
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="js/home.js"></script>
+    <script src="js/base.js"></script>
     <script src="js/scroll.js"></script>
+    #import("scripts")
   </head>
   <body>
     #import("body")

@@ -3,6 +3,9 @@
     #export("styles"):
         <link rel="stylesheet" href="/styles/auth.css">
     #endexport
+    #export("scripts"):
+        <script src="js/auth.js"></script>
+    #endexport
     #export("content-container"):
         <div class="input">
         <label for="email">Email</label>

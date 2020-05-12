@@ -3,14 +3,17 @@
     #export("styles"):
         <link rel="stylesheet" href="/styles/auth.css">
     #endexport
+    #export("scripts"):
+        <script src="js/auth.js"></script>
+    #endexport
     #export("content-container"):
         <div class="input">
         <label for="username">Username</label>
-        <input id="username">
+        <input id="username" value="info">
         <label for="email">Email</label>
-        <input id="email">
+        <input id="email" value="info@dev-subtuner.com">
         <label for="password">Password</label>
-        <input id="password">
+        <input id="password" value="qwerty123">
         <button onclick="signUp()">Create account</button>
     </div>
     #endexport
