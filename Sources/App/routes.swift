@@ -12,6 +12,10 @@ func routes(_ app: Application) throws {
     app.get("signup") { req in
         return req.view.render("base-body-sign-up")
     }
+    
+    app.get("signin") { req in
+        return req.view.render("base-body-sign-in")
+    }
 
 //    app.post("users") { req -> EventLoopFuture<User> in
 //        try User.Create.validate(req)
