@@ -4,7 +4,11 @@ window.onload = function() {
 
 function refreshAccountPopup() {
   var htmlFile = new XMLHttpRequest();
-  htmlFile.open("GET", "html/account-popup-guest.html", true);
+  if (isAuthorized())  {
+    htmlFile.open("GET", "html/account-popup-user.html", true);
+  } else {
+    htmlFile.open("GET", "html/account-popup-guest.html", true);
+  }
   htmlFile.onreadystatechange = function() {
     if (htmlFile.readyState === 4) {  // Makes sure the document is ready to parse.
       if (htmlFile.status === 200) {  // Makes sure it's found the file.

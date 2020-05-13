@@ -13,8 +13,8 @@ function logIn() {
       console.log('Received:', this.response);
     }
     if (responseObject.accessToken) {
-      localStorage.setItem('accessToken', responseObject.accessToken);
-      localStorage.setItem('refreshToken', responseObject.refreshToken);
+      window.localStorage.setItem('accessToken', responseObject.accessToken);
+      window.localStorage.setItem('refreshToken', responseObject.refreshToken);
       window.open('console', "_self");
     } else {
       console.log("Error: Cannot parse tokens");
@@ -22,7 +22,11 @@ function logIn() {
     document.getElementById('main-container-overlay').style.display = "none";
   });
 
-  var sendObject = JSON.stringify({email: email, password: password});
+  const logInOutput = {
+    email: email,
+    password: password
+  }
+  var sendObject = JSON.stringify(logInOutput);
 
   if (debug == true) {
     console.log('Send:', sendObject);
