@@ -1,5 +1,5 @@
 function isAuthorized() {
-  var accessToken = window.localStorage.getItem('accessToken');
+  var accessToken = window.sessionStorage.getItem('accessToken');
   if (accessToken) {
     return true;
   } else {

@@ -15,8 +15,8 @@ function signUp() {
       console.log('Received:', this.response);
     }
     if (responseObject.accessToken) {
-      window.localStorage.setItem('accessToken', responseObject.accessToken);
-      window.localStorage.setItem('refreshToken', responseObject.refreshToken);
+      window.sessionStorage.setItem('accessToken', responseObject.accessToken);
+      window.sessionStorage.setItem('refreshToken', responseObject.refreshToken);
       window.open('console', "_self");
     } else {
       console.log("Error: Cannot parse tokens");
