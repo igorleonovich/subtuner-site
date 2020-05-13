@@ -58,7 +58,7 @@ body {
   display: inline-block;
 }
 
-@media screen and (prefers-color-scheme: light) {
+@media screen and (prefers-color-scheme: dark) {
 	:root {
 		--background-color: white;
 		--foreground-color: black;

@@ -14,7 +14,7 @@
         <label for="email">Email</label>
         <input id="email" value="info@dev-subtuner.com">
         <label for="password">Password</label>
-        <input id="password" value="qwerty123">
+        <input id="password" type="password" value="qwerty123">
         <button onclick="signUp()">Create account</button>
       </div>
     #endexport

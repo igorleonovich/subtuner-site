@@ -1,0 +1,11 @@
+#extend("base-body"):
+  #export("title", "Console")
+  #export("styles"):
+      <link rel="stylesheet" href="/styles/console.css">
+  #endexport
+  #export("scripts"):
+  #endexport
+  #export("content-container"):
+    <h4>Console</h4>
+  #endexport
+#endextend

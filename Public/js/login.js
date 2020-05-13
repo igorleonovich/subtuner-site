@@ -1,14 +1,12 @@
-function signUp() {
-  var signUpUrl = "http://dev-subtuner.com:8090/v1/users/register"
+function logIn() {
+  var logInUrl = "http://dev-subtuner.com:8090/v1/users/login"
 
-  var usernameElement = document.getElementById('username');
   var emailElement = document.getElementById('email');
   var passwordElement = document.getElementById('password');
-  var username = usernameElement.value;
   var email = emailElement.value;
   var password = passwordElement.value;
 
-  var xhr = createCORSRequest('POST', signUpUrl);
+  var xhr = createCORSRequest('POST', logInUrl);
   xhr.addEventListener('load', function() {
     var responseObject = JSON.parse(this.response);
     if (debug == true) {
@@ -24,7 +22,7 @@ function signUp() {
     document.getElementById('main-container-overlay').style.display = "none";
   });
 
-  var sendObject = JSON.stringify({username: username, email: email, password: password});
+  var sendObject = JSON.stringify({email: email, password: password});
 
   if (debug == true) {
     console.log('Send:', sendObject);

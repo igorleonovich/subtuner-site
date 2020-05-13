@@ -7,10 +7,11 @@ body {
   font-weight: 100;
 }
 
-/* Root */
+/* Main Container */
 
 #main-container {
     width: 320px;
+    height: 100%;
 		margin: 0 auto;
 		padding: 0px;
 }
@@ -157,7 +158,10 @@ body {
   font-weight: 800;
 }
 
+/* Content */
+
 #content-container {
   position: relative;
   top: 48px;
+  height: 100%;
 }

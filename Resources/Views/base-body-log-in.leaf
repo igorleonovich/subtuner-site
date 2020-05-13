@@ -10,9 +10,9 @@
     <div class="input">
       <h4>Log In</h4>
       <label for="email">Email</label>
-      <input id="email">
+      <input id="email" value="info@dev-subtuner.com">
       <label for="password">Password</label>
-      <input id="password">
+      <input id="password" type="password" value="qwerty123">
       <button onclick="logIn()">Log In</button>
     </div>
   #endexport

@@ -12,12 +12,7 @@
         <li><a href="#" onclick="return false;">Item 2</a></li>
       </ul>
     </div>
-    <div id="account-popup" data-haspopup="false">
-      <ul>
-        <li><a href="login">Log In</a></li>
-        <li><a href="signup">Sign Up</a></li>
-      </ul>
-    </div>
+    <div id="account-popup" data-haspopup="false">a</div>
     <div id="content-container">
       #import("content-container")
     </div>
