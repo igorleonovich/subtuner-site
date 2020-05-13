@@ -27,4 +27,12 @@
   background: -ms-linear-gradient(bottom, #dfdfdf, #ffffff);
   background: -moz-linear-gradient(center bottom, #dfdfdf 0%, #ffffff 100%);
   background: -o-linear-gradient(#ffffff, #dfdfdf);
+  cursor: pointer;
+}
+
+.input button:hover {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+  background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
+  background: -o-linear-gradient(#ffffff, #eeeeee);
 }

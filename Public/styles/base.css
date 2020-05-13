@@ -61,6 +61,10 @@ body {
   background: #000000;
 }
 
+#menu-popup ul {
+  padding: 0 0 0 20px;
+}
+
 #menu-popup ul li {
   list-style-type: none;
   height: 30px;
@@ -69,6 +73,10 @@ body {
 #menu-popup ul li a {
   text-decoration: none;
   color: #ffffff;
+}
+
+#menu-popup ul li a:hover {
+  font-weight: 800;
 }
 
 /* Logo */
@@ -114,12 +122,26 @@ body {
   top: 48px;
   width: inherit;
   height: 80px;
-  background: #dddddd;
+  background: #000000;
+}
+
+#account-popup ul {
+  padding: 0 20px 0 0;
+  text-align: right;
 }
 
 #account-popup ul li {
   list-style-type:none;
   height: 26px;
+}
+
+#account-popup ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#account-popup ul li a:hover {
+  font-weight: 800;
 }
 
 #content-container {
