@@ -1,13 +1,14 @@
 #extend("base-body"):
     #export("title", "Sign Up")
     #export("styles"):
-        <link rel="stylesheet" href="/styles/auth.css">
+      <link rel="stylesheet" href="/styles/auth.css">
     #endexport
     #export("scripts"):
-        <script src="js/auth.js"></script>
+      <script src="js/signup.js"></script>
     #endexport
     #export("content-container"):
-        <div class="input">
+      <div class="input">
+        <h4>Sign Up</h4>
         <label for="username">Username</label>
         <input id="username" value="info">
         <label for="email">Email</label>
@@ -15,6 +16,6 @@
         <label for="password">Password</label>
         <input id="password" value="qwerty123">
         <button onclick="signUp()">Create account</button>
-    </div>
+      </div>
     #endexport
 #endextend

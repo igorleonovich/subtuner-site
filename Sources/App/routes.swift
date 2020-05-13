@@ -13,8 +13,8 @@ func routes(_ app: Application) throws {
         return req.view.render("base-body-sign-up")
     }
     
-    app.get("signin") { req in
-        return req.view.render("base-body-sign-in")
+    app.get("login") { req in
+        return req.view.render("base-body-log-in")
     }
 
 //    app.post("users") { req -> EventLoopFuture<User> in

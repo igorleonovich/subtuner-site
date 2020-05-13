@@ -1,0 +1,19 @@
+#extend("base-body"):
+  #export("title", "Sign In")
+  #export("styles"):
+    <link rel="stylesheet" href="/styles/auth.css">
+  #endexport
+  #export("scripts"):
+    <script src="js/login.js"></script>
+  #endexport
+  #export("content-container"):
+    <div class="input">
+      <h4>Log In</h4>
+      <label for="email">Email</label>
+      <input id="email">
+      <label for="password">Password</label>
+      <input id="password">
+      <button onclick="logIn()">Log In</button>
+    </div>
+  #endexport
+#endextend
