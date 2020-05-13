@@ -17,9 +17,9 @@ func routes(_ app: Application) throws {
         return req.view.render("base-body-log-in")
     }
     
-    app.get("console") { req in
-        return req.view.render("base-body-console-full")
-    }
+    let console = app.grouped("console")
+    let protectedConsole = console.grouped(JWTCookieMiddleware())
+    try protectedConsole.register(collection: ConsoleViewController())
     
     // MARK: - Password Protected
     
