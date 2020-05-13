@@ -1,6 +1,7 @@
 import Fluent
 import FluentPostgresDriver
 import Vapor
+import JWT
 import Leaf
 
 public func configure(_ app: Application) throws {
@@ -21,6 +22,13 @@ public func configure(_ app: Application) throws {
     
     // MARK: - Custom Middleware
     //    app.middleware.use(ExtendPathMiddleware())
+    
+    
+    // MARK: - JWKS
+    guard let jwksString = Environment.process.JWKS else {
+        fatalError("No value was found at the given public key environment 'JWKS'")
+    }
+    try app.jwt.signers.use(jwksJSON: jwksString)
     
     
     // MARK: - Leaf
