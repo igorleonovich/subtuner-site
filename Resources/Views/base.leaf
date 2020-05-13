@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#import("title")</title>
     <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/loader.css">
     #import("styles")
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="js/setup.js"></script>
     <script src="js/network.js"></script>
     <script src="js/base.js"></script>
     <script src="js/scroll.js"></script>

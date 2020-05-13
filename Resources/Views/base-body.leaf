@@ -22,5 +22,6 @@
       #import("content-container")
     </div>
   </div>
+  <div id="main-container-overlay"><div id="loader"></div></div>
   #endexport
 #endextend

@@ -20,6 +20,7 @@ function signUp() {
     } else {
       console.log("Error: Cannot parse tokens");
     }
+    document.getElementById('main-container-overlay').style.display = "none";
   });
 
   var sendObject = JSON.stringify({username: username, email: email, password: password});
@@ -28,4 +29,5 @@ function signUp() {
     console.log('Send:', sendObject);
   }
   xhr.send(sendObject);
+  document.getElementById('main-container-overlay').style.display = "block";
 }
