@@ -16,11 +16,12 @@ function logIn() {
       window.sessionStorage.setItem('accessToken', responseObject.accessToken);
       setCookie("accessToken", responseObject.accessToken, 1);
       window.sessionStorage.setItem('refreshToken', responseObject.refreshToken);
-      window.open('console', "_self");
+      openProtectedURL('console', function() {
+        document.getElementById('main-container-overlay').style.display = "none";
+      });
     } else {
       console.log("Error: Cannot parse tokens");
     }
-    document.getElementById('main-container-overlay').style.display = "none";
   });
 
   const logInOutput = {
