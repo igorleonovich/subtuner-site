@@ -1,6 +1,6 @@
 :root {
-	--background-color: black;
-	--foreground-color: white;
+	--background-color: white;
+	--foreground-color: black;
 	--border: 1px solid var(--foreground-color);
 }
 
@@ -61,8 +61,8 @@ body {
 
 @media screen and (prefers-color-scheme: dark) {
 	:root {
-		--background-color: white;
-		--foreground-color: black;
+		--background-color: black;
+		--foreground-color: white;
 	}
 
   body {
