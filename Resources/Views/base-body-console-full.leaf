@@ -9,7 +9,7 @@
     <div class="root-container">
         <div class="main-container">
           <div class="left-container"></div>
-          <div class="right-container"></div>
+          <div class="right-container"><p>Console Builder</p></div>
         </div>
         <div class="console-container"></div>
     </div>

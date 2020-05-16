@@ -46,6 +46,7 @@ body {
 .main-container {
 	display: grid;
 	height: 100%;
+  grid-auto-columns: 50%;
 	grid-template-areas:
 		'left-container right-container';
 }
