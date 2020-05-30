@@ -3,7 +3,9 @@
   <div id="main-container">
     <nav id="navigation">
       <div id="menu-button"><a title="Menu" href="#" onclick="clickMenu();return false;"></a></div>
-      <div id="logo"><a title="Home" href="/">Subtuner</a></div>
+      <div id="logo">
+        #(pageTitle)
+      </div>
       <div id="account-button"><a title="Account" href="#" onclick="clickAccount();return false;"></a></div>
     </nav>
     <div id="menu-popup" data-opened="false">

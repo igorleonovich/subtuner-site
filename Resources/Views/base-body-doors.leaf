@@ -1,11 +1,11 @@
 #extend("base-body"):
-  #export("title", "Console")
+  #export("title", "Doors")
   #export("styles"):
-      <link rel="stylesheet" href="/styles/console.css">
+      <link rel="stylesheet" href="/styles/doors.css">
   #endexport
   #export("scripts"):
   #endexport
   #export("content-container"):
-    <h4>Console</h4>
+    <h4>Doors</h4>
   #endexport
 #endextend

@@ -6,20 +6,20 @@ func routes(_ app: Application) throws {
     // MARK: - Unprotected
     
     app.get { req in
-        return req.view.render("base-body-home")
+        return req.view.render("base-body-home",  ["pageTitle": "S U B T U N E R"])
     }
     
     app.get("signup") { req in
-        return req.view.render("base-body-sign-up")
+        return req.view.render("base-body-sign-up", ["pageTitle": "S U B T U N E R"])
     }
     
     app.get("login") { req in
-        return req.view.render("base-body-log-in")
+        return req.view.render("base-body-log-in", ["pageTitle": "S U B T U N E R"])
     }
     
-    let console = app.grouped("console")
-    let protectedConsole = console.grouped(JWTCookieMiddleware())
-    try protectedConsole.register(collection: ConsoleViewController())
+    let doors = app.grouped("doors")
+    let protectedDoors = doors.grouped(JWTCookieMiddleware())
+    try protectedDoors.register(collection: DoorsViewController())
     
     // MARK: - Password Protected
     

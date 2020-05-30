@@ -99,17 +99,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-weight: 100;
 }
 
-#logo a {
-  text-decoration: none;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-#logo a:visited {
-  color: #ffffff;
-}
+/*#logo a {*/
+/*  text-decoration: none;*/
+/*  font-weight: 800;*/
+/*  color: #ffffff;*/
+/*}*/
+/**/
+/*#logo a:visited {*/
+/*  color: #ffffff;*/
+/*}*/
 
 #account-button {
   position: absolute;

@@ -1,7 +1,7 @@
 #extend("base-body"):
-  #export("title", "Console Full")
+  #export("title", "Doors Full")
   #export("styles"):
-      <link rel="stylesheet" href="/styles/console-full.css">
+      <link rel="stylesheet" href="/styles/doors-full.css">
   #endexport
   #export("scripts"):
   #endexport
@@ -9,7 +9,7 @@
     <div class="root-container">
         <div class="main-container">
           <div class="left-container"></div>
-          <div class="right-container"><!--<p>Console Builder</p>--></div>
+          <div class="right-container"></div>
         </div>
         <div class="console-container"></div>
     </div>

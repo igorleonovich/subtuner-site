@@ -16,7 +16,7 @@ function logIn() {
       window.sessionStorage.setItem('accessToken', responseObject.accessToken);
       setCookie("accessToken", responseObject.accessToken, 1);
       window.sessionStorage.setItem('refreshToken', responseObject.refreshToken);
-      openProtectedURL('console', function() {
+      openProtectedURL('doors', function() {
         document.getElementById('main-container-overlay').style.display = "none";
       });
     } else {
