@@ -8,7 +8,7 @@
     #endexport
     #export("content-container"):
       <div class="input">
-        <h4>Sign Up</h4>
+        <h4>R E G I S T R A T I O N</h4>
         <label for="username">Username</label>
         <input id="username" value="info">
         <label for="email">Email</label>

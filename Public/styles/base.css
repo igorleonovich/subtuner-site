@@ -85,11 +85,12 @@ body {
 
 #menu-popup ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #cccccc;
+  font-weight: 100;
 }
 
 #menu-popup ul li a:hover {
-  font-weight: 800;
+  color: #ffffff;
 }
 
 /* Logo */
@@ -101,6 +102,7 @@ body {
   transform: translate(-50%, -50%);
   color: #ffffff;
   font-weight: 100;
+  font-size: 12pt;
 }
 
 /*#logo a {*/
@@ -146,16 +148,17 @@ body {
 
 #account-popup ul li {
   list-style-type:none;
-  height: 26px;
+  height: 30px;
 }
 
 #account-popup ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #cccccc;
+  font-weight: 100;
 }
 
 #account-popup ul li a:hover {
-  font-weight: 800;
+  color: #ffffff;
 }
 
 /* Content */
