@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/igorleonovich/jwt-payload.git",
         "state": {
           "branch": null,
-          "revision": "af386b94cf1f6b530682fdae794a10e0b995ce27",
-          "version": "0.0.7"
+          "revision": "3aa81b218bbe6a460e302becfdbce377739f95d3",
+          "version": "0.0.8"
         }
       },
       {
