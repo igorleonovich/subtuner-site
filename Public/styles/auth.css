@@ -47,3 +47,8 @@
   background: -moz-linear-gradient(center bottom, #eeeeee 0%, #ffffff 100%);
   background: -o-linear-gradient(#ffffff, #eeeeee);
 }
+
+.input > label {
+  font-size: 8pt;
+  text-transform: uppercase;
+}
