@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/igorleonovich/jwt-middleware.git",
         "state": {
           "branch": null,
-          "revision": "32a8a5771a690f9c6108e422b5b4f1bbfbe2a478",
-          "version": "0.0.3"
+          "revision": "fb255b2072705ac711ba1e993273187c581d14bd",
+          "version": "0.0.4"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/igorleonovich/jwt-payload.git",
         "state": {
           "branch": null,
-          "revision": "4b5324f534f21b242045ce19f6f6dd45c1a6460e",
-          "version": "0.0.6"
+          "revision": "af386b94cf1f6b530682fdae794a10e0b995ce27",
+          "version": "0.0.7"
         }
       },
       {
