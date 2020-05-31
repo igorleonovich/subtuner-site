@@ -65,21 +65,21 @@
         }
       },
       {
+        "package": "jwt-cookie-middleware",
+        "repositoryURL": "https://github.com/igorleonovich/jwt-cookie-middleware.git",
+        "state": {
+          "branch": null,
+          "revision": "7cecc41e87271f5976c19693a4ffa1219c4162aa",
+          "version": "0.0.6"
+        }
+      },
+      {
         "package": "jwt-kit",
         "repositoryURL": "https://github.com/vapor/jwt-kit.git",
         "state": {
           "branch": null,
           "revision": "b5aa3d4eb91b54d0bd31a1a0c238199f2bf65969",
           "version": "4.0.0-rc.1.4"
-        }
-      },
-      {
-        "package": "jwt-middleware",
-        "repositoryURL": "https://github.com/igorleonovich/jwt-middleware.git",
-        "state": {
-          "branch": null,
-          "revision": "fb255b2072705ac711ba1e993273187c581d14bd",
-          "version": "0.0.4"
         }
       },
       {

@@ -1,5 +1,6 @@
 import Fluent
 import Vapor
+import jwt_cookie_middleware
 
 func routes(_ app: Application) throws {
     
