@@ -6,9 +6,9 @@
   padding-top: 10px;
   white-space: break-spaces;
   text-align: center;
-  font-weight: 500;
-  font-size: 8pt;
-  letter-spacing: 2pt;
+  font-weight: 600;
+  font-size: 10pt;
+  letter-spacing: 1pt;
 }
 
 .input input {
@@ -58,5 +58,5 @@
 .input > label {
   text-transform: uppercase;
   font-size: 8pt;
-  letter-spacing: 2pt;
+  letter-spacing: 1pt;
 }
